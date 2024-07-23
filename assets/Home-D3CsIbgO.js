@@ -1,0 +1,1 @@
+import{j as e}from"./index-BS2gDEhP.js";function r(){return e.jsxs("div",{style:{margin:"50px"},children:[e.jsx("h1",{children:"Phonebook welcome page!"}),e.jsx("h3",{children:"Please login or sign up to create your private contact book."})]})}export{r as default};
