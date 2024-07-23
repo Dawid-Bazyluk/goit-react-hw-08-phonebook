@@ -32,7 +32,8 @@ export const logIn = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post("users/login", credentials);
+      const response = await axios.post("/users/login", credentials);
+
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
@@ -43,7 +44,8 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
-    await axios.post("users/logout");
+    await axios.post("/users/logout");
+
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -59,9 +61,10 @@ export const refreshUser = createAsyncThunk(
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue("Unable to fetch user");
     }
+
     try {
       setAuthHeader(persistedToken);
-      const response = await axios.get("users/contacts");
+      const response = await axios.get("/users/contacts");
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

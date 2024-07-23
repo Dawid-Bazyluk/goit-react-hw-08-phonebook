@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import style from "./LoginForm.module.scss";
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -28,7 +30,6 @@ export const LoginForm = () => {
         placeholder="Enter email"
         required
       />
-
       <TextField
         id="standard-basic"
         label="Password"
@@ -42,11 +43,9 @@ export const LoginForm = () => {
       <Button
         type="submit"
         variant="outlined"
-        style={{
-          width: "100px",
-          marginTop: "30px",
-          alignSelf: "center",
-        }}>Log In</Button>
+        style={{ width: "100px", marginTop: "30px", alignSelf: "center" }}>
+        Log In
+      </Button>
     </form>
   );
 };

@@ -6,19 +6,19 @@ import { logOut } from "../../redux/auth/operations";
 
 
 export const UserMenu = () => {
-    const dispatch = useDispatch();
-    const { user } = useAuth();
+  const dispatch = useDispatch();
+  const { user } = useAuth();
 
-    return (
-      <div className={style.wrapper}>
-        <p className={style.username}>Hi, {user.name}!</p>
-        <Button
-          type="submit"
-          variant="outlined"
-          size="small"
-          onClick={() => dispatch(logOut())}>
-          Logout
-        </Button>
-      </div>
-    );
-}
+  return (
+    <div className={style.wrapper}>
+      <p className={style.username}>Hi, {user.name}!</p>
+      <Button
+        type="submit"
+        variant="outlined"
+        size="small"
+        onClick={() => dispatch(logOut())}>
+        Logout
+      </Button>
+    </div>
+  );
+};

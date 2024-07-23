@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectIsLoading } from "../redux/selectors";
 import { useEffect } from "react";
@@ -24,7 +25,7 @@ export default function Phonebook() {
       <ContactForm />
       <Filter />
       <ContactList />
-      {!!isLoading && !error && <b>Loadig...</b>}
+      {!!isLoading && !error && <b>Loading...</b>}
     </>
   );
 }

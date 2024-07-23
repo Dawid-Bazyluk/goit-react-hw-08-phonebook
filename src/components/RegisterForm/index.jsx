@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import style from "./RegisterForm.module.scss";
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ export const RegisterForm = () => {
         variant="standard"
         type="password"
         name="password"
-        placeholder="Enter password at least 7 characters"
+        placeholder="Enter password, at least 7 characters."
         pattern=".{7,}"
         title="Your password must contain at least 7 characters."
         required

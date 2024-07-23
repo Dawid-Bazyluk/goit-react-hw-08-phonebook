@@ -18,7 +18,7 @@ const App = () => {
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(refreshUser);
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -56,4 +56,5 @@ const App = () => {
     </Routes>
   );
 };
+
 export default App;

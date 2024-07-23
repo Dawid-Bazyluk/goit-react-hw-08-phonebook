@@ -44,4 +44,4 @@ const ContactsList = ({ storage }) => {
   return <ul className={styles.listItem}>{listItems}</ul>;
 };
 
-export default ContactList;
+export default ContactsList;

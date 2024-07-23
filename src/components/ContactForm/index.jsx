@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/selectors";
 import { nanoid } from "nanoid";
 import { addContact } from "../../redux/contactsSlicer";
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
