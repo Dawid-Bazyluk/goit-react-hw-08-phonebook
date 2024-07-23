@@ -1,8 +1,21 @@
-.filter{
-font-size: 1.5rem;
-display: flex;
+.filter {
+  margin-top: 50px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 18px;
 }
-
-.filter > input{
-    margin-left: .5rem;
+.input {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 63, 99, 0.283);
+  max-width: 150px;
+  height: 20px;
+  margin-left: 30px;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid rgb(247, 249, 255);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 4px 3px rgba(0, 63, 99, 0.283);
+  color: black;
 }

@@ -5,35 +5,43 @@ import { deleteContact } from "../../redux/contactsSlicer";
 
 import styles from "./ContactList.module.scss";
 
-const ContactList = ({ storage }) => {
+import { Button } from "@mui/material";
+import ListItem from "@mui/material/ListItem";
+
+const ContactsList = ({ storage }) => {
   const contacts = useSelector(selectContacts);
   const filterValue = useSelector(selectFilter);
   const dispatch = useDispatch();
 
+  const filterStatus = filterValue.status;
   const filterContact = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filterValue.status.toLowerCase()),
+    contact.name.toLowerCase().includes(filterStatus),
   );
 
-  const handleDelete = (id) => {
+  const handledDelete = (id) => {
     dispatch(deleteContact(id));
-    const updatedContacts = contacts.filter((contact) => contact.id !== id);
-    localStorage.setItem(storage, JSON.stringify(updatedContacts));
+    localStorage.setItem(storage, JSON.stringify(contacts));
   };
 
-  return (
-    <ul className={styles.list}>
-      {filterContact.map((contact) => (
-        <li key={contact.id} className={styles.item}>
-          {contact.name}: {contact.phone}
-          <button
-            className={styles.buttonItem}
-            onClick={() => handleDelete(contact.id)}>
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
+  const listItems =
+    filterContact.length === 0
+      ? ""
+      : filterContact.map((item) => {
+          return (
+            <ListItem key={item.id} id={item.id} className={styles.listelement}>
+              ➤ {item.name} : {item.number}
+              <Button
+                onClick={() => handledDelete(item.id)}
+                type="submit"
+                variant="outlined"
+                size="small">
+                Delete
+              </Button>
+            </ListItem>
+          );
+        });
+
+  return <ul className={styles.listItem}>{listItems}</ul>;
 };
 
 export default ContactList;

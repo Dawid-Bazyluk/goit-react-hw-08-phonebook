@@ -1,0 +1,19 @@
+.homeLink {
+  font-size: 28px;
+}
+.link,
+.homeLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+  transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #e84a5f;
+}
+.homeLink:hover {
+  color: #444ae7;
+}
