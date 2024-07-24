@@ -23,7 +23,13 @@ export const register = createAsyncThunk(
       if (error.response.data.code === 11000) {
         alert("This email is already in use");
       }
-      return thunkAPI.rejectWithValue(error.message);
+
+      const errorMessage =
+        error.response && error.response.data && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      alert(errorMessage);
+      return thunkAPI.rejectWithValue(errorMessage);
     }
   },
 );

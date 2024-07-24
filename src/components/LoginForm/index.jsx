@@ -22,7 +22,7 @@ export const LoginForm = () => {
   return (
     <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
       <TextField
-        id="standard-basic"
+        id="email"
         label="Email"
         variant="standard"
         type="email"
@@ -31,7 +31,7 @@ export const LoginForm = () => {
         required
       />
       <TextField
-        id="standard-basic"
+        id="password"
         label="Password"
         variant="standard"
         type="password"
