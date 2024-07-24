@@ -11,7 +11,7 @@ export const UserMenu = () => {
 
   return (
     <div className={style.wrapper}>
-      <p className={style.username}>Hi, {user.name}!</p>
+      <p className={style.username}>Hi, {user.email}</p>
       <Button
         type="submit"
         variant="outlined"
